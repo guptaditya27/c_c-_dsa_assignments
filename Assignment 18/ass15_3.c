@@ -38,4 +38,5 @@ int main() {
 /*
 1. create ek even /odd no array automatically
 2. then calculate sum of both.
+3. its not usual file
 */
