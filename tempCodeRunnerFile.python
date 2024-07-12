@@ -1,0 +1,16 @@
+class Vehicle:
+    def drive(self):
+        print ("hello")
+
+class Car(Vehicle):
+    def drive(self):
+        return "Driving a Car"
+    
+class Bicycle(Vehicle):
+    def drive(self):
+        return "Riding a Bicycle"
+    
+car = Car()
+bicycle = Bicycle()
+print(car.drive())
+print(bicycle.drive())
