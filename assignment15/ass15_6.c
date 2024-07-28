@@ -1,5 +1,5 @@
 # include<stdio.h>
-void noprime(int,int);
+void prime_btw(int,int);
 
 int main() {
     int a,b;
@@ -7,29 +7,27 @@ int main() {
     scanf("%d",&a);
     printf("enter Ending number:- ");
     scanf("%d",&b);
-    noprime(a,b);
+    prime_btw(a,b);
     return 0;
 }
-void noprime(int x,int y)
-{
-    
-    for(int k=x;k<=y;k++)
-    {   int flag=0;
-        for(int i=2;i<(x>y)?x:y;i++)
+void prime_btw(int n,int m)
+    {
+        int i=n<m?n:m;
+        int j=n>m?n:m;
+        for(i;i<=j;i++)
         {
-         if(k%i==0)
-         {
-            flag=1;
-            break;
-         }   
+            int flag=1;
+            for(int k=2;k<i;k++)
+                {
+                    if(i%k==0)
+                    {
+                        flag=0;
+                        break;
+                    }
+                }
+                if(flag==1)
+                {
+                    printf("%d ",i);
+                }
         }
-        if(flag==0)
-        {
-            printf("%d ",k);
-        }
-        else{
-            flag=0;
-        }
-
     }
-}

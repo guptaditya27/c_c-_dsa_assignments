@@ -9,8 +9,9 @@ int main() {
 }
 void nprime(int n)
 {
-    int k=1;
-    for(int i=1;k<=n;i++)
+    int count=1;
+    printf("%d ",2);
+    for(int i=1;count<n;i++)
     {   int flag=0;
         for(int j=2;j<i;j++)
         {
@@ -27,7 +28,7 @@ void nprime(int n)
         {   
             printf("%d ",i);
             flag=0;
-            k++;
+            count++;
         }
     }
 }

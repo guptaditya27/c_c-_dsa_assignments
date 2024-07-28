@@ -1,10 +1,11 @@
 # include<stdio.h>
 int hcf(int,int);
+int HCF(int ,int);
 int main() {
     int a,b;
     printf("enter Two NUMBER for HCF");
     scanf("%d %d",&a,&b);
-    printf("HCF of %d %d is %d",a,b,hcf(a,b));
+    printf("HCF of %d %d is %d",a,b,HCF(a,b));
     return 0;
 }
 int hcf(int x,int y){
@@ -19,4 +20,19 @@ int hcf(int x,int y){
         return k;
     }
     
+}
+
+int HCF(int n,int m)
+{
+    int k=n<m?n:m;
+    while(1)
+    {
+        if(n%k==0&m%k==0)
+        {
+            return k;
+        }
+        else{
+            k--;
+        }
+    }
 }
