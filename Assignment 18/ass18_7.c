@@ -1,24 +1,3 @@
-# include<stdio.h>
-
-int main() {
-    int arr[10];
-    for(int i=0;i<10;i++)
-    {
-        printf("Enter %d number :- ",i+1);
-        scanf("%d",&arr[i]);
-    }
-    int min=arr[0];
-    for(int i=0;i<10;i++)
-    {
-        if(arr[i]<min)
-        {
-            min=arr[i];
-        }
-    }
-    printf("\n smallest value is %d",min);
-    return 0;
-}
-/*
 // Online C compiler to run C program online
 #include <stdio.h>
 int greatest_array(int size,int arr[size])
@@ -42,6 +21,26 @@ int smallest_array(int size,int arr[size])
     }
     return k;
 }
+int second_largest(int size,int arr[size])
+{
+    int k1=arr[0];
+    int k2=arr[1];
+    for(int i=2;i<size;i++)
+    {
+        if(k2>k1);
+        {
+            int w=k1;
+            k1=k2;
+            k2=w;
+        }
+        if(arr[i]>k2)
+        {
+            k2=arr[i];
+        }
+        
+    }
+    return k2;
+}
 int main() {
     // Write C code here
     int size;
@@ -55,5 +54,7 @@ int main() {
     }
     printf("\nGreatest value of array is \"%d\"",greatest_array(size,arr));
     printf("\nsmallest value of array is \"%d\"",smallest_array(size,arr));
+    printf("\n2nd largest value of array is \"%d\"",second_largest(size,arr));
+    
     return 0;
-}*/
+}
