@@ -2,15 +2,8 @@
 void swap(int a[],int size,int index1,int index2)
 {
     int k=a[index1];
-    for(int i=1;i<size;i++)
-    {
-        if(i==index2)
-        {
-            a[index1]=a[index2];
-            a[index2]=k;
-            break;
-        }
-    }
+    a[index1]=a[index2];
+    a[index2]=k;
     for(int i=0;i<size;i++)
     {
         printf("%d ",a[i]);

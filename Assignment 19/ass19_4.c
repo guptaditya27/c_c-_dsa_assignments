@@ -1,57 +1,59 @@
-# include<stdio.h>
-// what does rotating an array means
-/*
-jitne no se rotate krna ho 
-utne index of array ko aage kr dege
-*/
-void rotate_array(int [],int,int,int);
-void rotate_array(int a[],int n,int size,int d)
-{   
-   int temp; 
-  
-  
-  if(d==1)
-  {
-    
-    
-    while(n){
-        temp=a[size-1];
-        for(int i=size-2;i>=0;i--)
-            a[i+1]=a[i];
-        a[0]=temp;
-        n--;
-
-    }
-    for(int i=0;i<size;i++)    
-        printf("%d ",a[i]);
-  }
-  else{
-
-  } 
-}
-
-int main() {
-    int size;
-    int d;
-    printf("enter size of array");
-    scanf("%d",&size);
-    int n,a[size];
-    for(int i=0;i<size;i++)
+// Online C compiler to run C program online
+#include <stdio.h>
+void rotate(int size,int arr[size],int n,int d)
+{
+    if(d==1)
     {
-        printf("Enter %d term:- ",i+1);
-        scanf("%d",&a[i]);
+        while(n>0)
+        {
+            int k=arr[size-1];
+            for(int i=size-1;i>0;i--)
+            {    
+                arr[i]=arr[i-1];
+            }
+            arr[0]=k;
+            n--;
+        }
     }
-    printf("Enter no terms to rotate");
-    scanf("%d",&n);
-    printf("Enter direction to rotate\n 1---- for right\n-1---- for left");
-    scanf("%d",&d);
-
-    if(n>size)
+    
+    else if(d==-1)
     {
-        printf("Enter valid rotate terms 0 ---- %d",size);
+        while(n>0)
+        {
+            int k=arr[0];
+            for(int i=0;i<size;i++)
+            {
+                if(i==size-1)
+                    arr[size-1]=k;
+                else{
+                    arr[i]=arr[i+1];
+                }
+            }
+            n--;
+        }
     }
     else{
-        rotate_array(a,n,size,d);
+        printf("Invalid input parameters!!\n");
     }
+    for(int i=0;i<size;i++)
+        printf("%d ",arr[i]);
+}
+int main() {
+    // Write C code here
+    int size,d,n;
+    printf("Enter size of array:- ");
+    scanf("%d",&size);
+    int arr[size];
+    for(int i=0;i<size;i++)
+    {
+        printf("Enter %d value of array :- ",i+1);
+        scanf("%d",&arr[i]);
+    }
+    printf("enter Number termms to Rotate :- ");
+    scanf("%d",&n);
+    printf("Enter firection of rotation::\n1-------- for right shift\n-1 ------ for Left shift  ");
+    scanf("%d",&d);
+    rotate(size,arr,n,d);
+
     return 0;
 }

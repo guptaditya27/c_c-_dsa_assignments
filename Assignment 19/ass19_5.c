@@ -37,7 +37,7 @@ int main() {
         printf("Enter %d value :- ",i+1);
         scanf("%d",&a[i]);
     }
-    printf("first Occured adjacent duplicate value is \"%d\"  ",adj_duplicate(a,size));
+    printf("first Occured adjacent  duplicate value is \"%d\"  ",adj_duplicate(a,size));
     
     //printf("first Occured duplicate value is \"%d\"  ",duplicate(a,size));
     return 0;

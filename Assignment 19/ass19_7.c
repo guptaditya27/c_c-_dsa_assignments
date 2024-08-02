@@ -1,17 +1,34 @@
 # include<stdio.h>
-int count_duplicate(int a[],int size)
+void sort_aesc(int a[],int size)
 {
-    int count=0;
     for(int i=0;i<size;i++)
     {
-        for(int j=i+1;i<size;i++)
+        for(int j=0;j<size;j++)
         {
-            if(a[i]==a[j])
+            if(a[i]<a[j])
             {
-                count++;
+                int k=a[i];
+                a[i]=a[j];
+                a[j]=k;
             }
         }
     }
+    
+}
+int count_duplicate(int a[],int size)
+{
+    sort_aesc(a,size);
+        int count=0,i=0,j=1;
+        
+        while(i<size)
+        {
+            if(a[i]==a[j])
+                count++;
+            while(a[i]==a[j])
+                j++;
+            i=j;
+            j=i+1;
+        }
     return count;
 }
 int main() {
