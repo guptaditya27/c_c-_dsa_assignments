@@ -1,49 +1,57 @@
-#include<iostream>
+#include <iostream>
+#include <stdexcept>
 using namespace std;
-#include<stdio.h>
-class Array{
-    private:
-        int capacity;
-        int lastindex;
-        int* ptr;
-    public:
-        Array();
-        Array(int);
-        void Append();
-        void Extend(int[]);
-        void print();
-        void 
 
-};
-Array::Array()
-{
-    ptr=NULL;
-    capacity=0;
-    lastindex=-1;
-}
-Array::Array(int cap)
-{
-    try{
-        lastindex=-1;
-        ptr=NULL;
-        capacity=0;
-        if(cap<0)
-            throw 1;
-        else{
-            capacity=cap;
-            lastindex=-1;
-            ptr=new int[capacity];
+class Array {
+private:
+    int* data;
+    int size;
 
+public:
+    // Constructor
+    Array(int s) : size(s) {
+        data = new int[size];
+    }
+
+    // Destructor
+    ~Array() {
+        delete[] data;
+    }
+
+    // Subscript operator for non-const objects
+    int& operator {
+        if (index < 0 || index >= size) {
+            throw out_of_range("Index out of range");
         }
+        return data[index];
+    }
 
+    // Subscript operator for const objects
+    const int& operator const {
+        if (index < 0 || index >= size) {
+            throw out_of_range("Index out of range");
+        }
+        return data[index];
     }
-    catch(int e)
-    {
-        if(e==1)
-            cout<<"Neg Size Not Allowed !!"<<endl;
+
+    // Function to get the size of the array
+    int getSize() const {
+        return size;
     }
-}
-int main()
-{
-   return 0;
+};
+
+int main() {
+    Array arr(5);
+
+    // Assign values to the array
+    for (int i = 0; i < arr.getSize(); ++i) {
+        arr[i] = i * 10;
+    }
+
+    // Access and print values from the array
+    for (int i = 0; i < arr.getSize(); ++i) {
+        cout << "arr[" << i << "] = " << arr[i] << endl;
+    }
+
+    return 0;
 }
