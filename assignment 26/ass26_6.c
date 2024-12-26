@@ -7,10 +7,6 @@ struct Employee
     float salary;
 
 };
-void display(struct Employee E)
-{
-    printf("%d %s %f \n",E.id,E.Name,E.salary);
-}
 struct Employee input()
 {
     struct Employee E;
@@ -23,11 +19,25 @@ struct Employee input()
 }
 void display(struct Employee E)
 {
-    printf("%d %s %f \n",E.id,E.Name,E.salary);
+    printf("%d %s %.2f \n",E.id,E.Name,E.salary);
 }
-void sort_Employee_name(struct Employee k[],int size)
+void sort_Employee_name(struct Employee k[],int n)
 {
+    // bubblesort.
+    int r,i;
     
+    for(r=1;r<n;r++)
+    {
+        for(i=0;i<n-r-1;i++)
+        {
+            if(strcmp(k[i].Name,k[i+1].Name)>0)
+            {
+                struct Employee Z=k[i];
+                k[i]=k[i+1];
+                k[i+1]=Z;
+            }
+        }
+    }
 }
 int main() {
     struct Employee e1={101,"Ram Raj",10000}; 
