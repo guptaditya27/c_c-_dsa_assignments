@@ -41,7 +41,7 @@ void generateCombinationsUtil(char* str, int n, int r, int index, int* data, int
 }
 
 int main() {
-    char str[] = "ABCD";
+    char str[] = "aditya Gupta";
     int r = 2;
     int count;
     char** combinations = generateCombinations(str, strlen(str), r, &count);

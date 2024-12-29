@@ -12,7 +12,7 @@ void ispalindrome(char *c)
     int size=0;
     int i,j,count;
     while(c[size])
-        size++;
+        size++; 
     char rev_str[size];
     for(i=0,j=size;c[i];i++,j--)
     {
