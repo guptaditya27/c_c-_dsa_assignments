@@ -21,9 +21,43 @@ class Queue{
         void pop();
         void del();
         void count();
-        void 
+        void rear();
+        void front();
 
 };
+void Queue::front(){
+    try{
+        if(last==NULL)
+            throw 1;
+        cout<<"Front Element :- "<<last->next->item<<endl;
+    }
+    catch(int e){
+        if(e==1)
+            cout<<"Queue Doesn;'t Exist !!"<<endl;
+    }
+}
+void Queue::rear(){
+    try{
+        if(last==NULL)
+            throw 1;
+        cout<<"Rear Element :- "<<last->item<<endl;
+    }
+    catch(int e){
+        if(e==1)
+            cout<<"Queue Doesn;'t Exist !!"<<endl;
+    }
+}
+void Queue::count(){
+    try{
+        if(last==NULL)
+            throw 1;
+        cout<<"Total Elements :- "<<last->index+1<<endl;
+    }
+    catch(int e){
+        if(e==1)
+            cout<<"Queue Doesn;'t Exist !!"<<endl;
+    }
+}
 Queue::Queue(Queue&Q){
     last=NULL;
     if(Q.last==NULL)
