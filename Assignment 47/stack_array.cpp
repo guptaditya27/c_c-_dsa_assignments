@@ -25,6 +25,9 @@ class Stack{
 
 
 };
+void Stack::count(){
+    cout<<top+1<<endl;
+}
 void Stack::pop(){
     if(top==-1||stack==NULL)
         cout<<"Stack Doesn't Exist !!"<<endl;
