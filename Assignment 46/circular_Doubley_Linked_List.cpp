@@ -25,7 +25,8 @@ class CDLL{
         void clear();
         bool is_exist(int);
         void Delete(int);
-        void Reverse();
+        //void Reverse();
+        //void Sort(int);
         void print();
 
 
