@@ -13,7 +13,7 @@ class Dequeue{
       Node*rear;
    protected:
       Node* search(int);
-      void Delete(Node*);
+      //void Delete(Node*);
    public:
       Dequeue();
       Dequeue(int);
@@ -23,9 +23,9 @@ class Dequeue{
       void Insert_rear(int);
       void Delete_front();
       void Delete_rear();
-      void Delete_byindex(int);// by index value.
-      void Delete_byvalue(int);
-      bool is_exist(int)// value.
+      //void Delete_byindex(int);// by index value.
+      //void Delete_byvalue(int);
+      bool is_exist(int,int=0)// value.
       int get_front();
       int get_rear();
       void get_Node(int);
@@ -35,9 +35,44 @@ class Dequeue{
 
 
 };
-bool Dequeue::is_exist(int value,int index=0){
-   if(t->item==value&&t->index=index)
-      return 1;
+Node* Dequeue::search(int val){
+   if(is_exist(val)){
+      Node*t=front;
+      while(t){
+         if(t->item==val)
+            return t;
+         if(t==rear)
+            return NULL;
+         t=t->next;
+      }
+   }
+   
+}
+bool Dequeue::is_exist(int value,int index){
+   Node*t=front;
+   if(index==0)
+   {
+      // search 1st occurence
+      while(t){
+         if(t->item==value)
+            return 1;
+         if(t==rear)
+            break;
+         t=t->next;
+      }
+      return 0;
+
+   }
+   else{
+      while(t){
+         if(t->item==value&&t->index=index)
+            return 1;
+         if(t==rear)
+            break;
+      }
+      return 0;
+   }
+   
 }
 void Dequeue::get_Node(int index){
    try{
