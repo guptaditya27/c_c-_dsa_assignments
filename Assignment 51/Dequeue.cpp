@@ -18,7 +18,7 @@ class Dequeue{
       Dequeue();
       Dequeue(int);
       ~Dequeue();
-      Dequeue(Dequeue&);
+      //Dequeue(Dequeue&);
       void Insert_front(int);
       void Insert_rear(int);
       void Delete_front();
