@@ -21,6 +21,7 @@ class Complex{
         bool operator==(Complex&);
         void print();
         double magnitude();
+
         
         
 };

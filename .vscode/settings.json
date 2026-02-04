@@ -1,6 +1,15 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "array": "cpp",
+        "vector": "cpp",
+        "stdexcept": "cpp",
+        "typeinfo": "cpp",
+        "ostream": "cpp",
+        "list": "cpp",
+        "forward_list": "cpp",
+        "stack": "cpp",
+        "xstring": "cpp"
     }
 }

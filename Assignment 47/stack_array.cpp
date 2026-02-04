@@ -21,10 +21,21 @@ class Stack{
         void print();
         void create_stack(int);
         void current_status();
+        void reverse();
+        void sort();
+        bool is_empty();
 
 
 
 };
+bool Stack::is_empty(){
+    return top==0||top==-1;
+}
+void Stack::reverse(){
+    if(top==0){
+        return;
+    }
+}
 void Stack::count(){
     cout<<top+1<<endl;
 }
