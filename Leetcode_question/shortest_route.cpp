@@ -5,9 +5,6 @@ using namespace std;
 #include<queue>
 #include<algorithm>
 #include <climits>
-void dijkstra(unordered_map<long long,vector<pair<long long,long long>>>&adj,vector<long long>&distances,long long src,long long n,long long m){
-
-}
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -23,7 +20,7 @@ int main() {
     }
     long long src=1;
     int V=n+1; // no of nodes
-    priority_queue<pair<long long,long long>,vector<pair<long long,long long>>,greater<pair<long long,long long>>>pq;
+    
     vector<long long>distances(V,LLONG_MAX);
     distances[src]=0;
     pq.push({0,src}); // distance for src to src is zero
